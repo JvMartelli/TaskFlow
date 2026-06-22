@@ -40,12 +40,22 @@ function Sidebar({ view, nav, tasks, open, close }) {
           ))}
         </nav>
         <div className="tm-sb-user">
-          <div className="tm-av">JS</div>
-          <div>
-            <div className="tm-un">João Silva</div>
-            <div className="tm-ur">Estudante · SI 7º</div>
+          <div className="tm-av">
+            {(JSON.parse(localStorage.getItem("taskflowUser"))?.name || "U")
+              .substring(0,2)
+              .toUpperCase()}
+            </div>
+
+            <div>
+              <div className="tm-un">
+                {JSON.parse(localStorage.getItem("taskflowUser"))?.name || "Usuário"}
+              </div>
+
+              <div className="tm-ur">
+                
+              </div>
+            </div>
           </div>
-        </div>
       </aside>
     </>
   );
